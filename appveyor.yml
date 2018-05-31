@@ -10,7 +10,7 @@ branches:
 build_script:
 - dotnet pack -c Release
 test_script:
-- ps: ./Coverage.ps1
+- dotnet test -c Release .\test\Nito.Guids.Tests\
 artifacts:
   - path: '**\*.nupkg'
     name: NuGet Packages
