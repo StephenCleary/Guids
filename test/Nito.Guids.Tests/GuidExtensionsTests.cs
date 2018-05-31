@@ -16,6 +16,32 @@ namespace Nito.Guids.Tests
         }
 
         [Fact]
+        public void Decode_Guid_Roundtrip()
+        {
+            var guid = Guid.NewGuid();
+            var decoded = guid.Decode();
+            Assert.Equal(guid, decoded.ToGuid());
+        }
+
+        [Fact]
+        public void Decode_BigEndianByteArray_Roundtrip()
+        {
+            var bytes = new byte[] { 0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88, 0x99, 0xAA, 0xBB, 0xCC, 0xDD, 0xEE, 0xFF };
+            var guid = GuidFactory.FromBigEndianByteArray(bytes);
+            var decoded = guid.Decode();
+            Assert.Equal(bytes, decoded.ToBigEndianByteArray());
+        }
+
+        [Fact]
+        public void Decode_LittleEndianByteArray_Roundtrip()
+        {
+            var bytes = new byte[] { 0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88, 0x99, 0xAA, 0xBB, 0xCC, 0xDD, 0xEE, 0xFF };
+            var guid = GuidFactory.FromLittleEndianByteArray(bytes);
+            var decoded = guid.Decode();
+            Assert.Equal(bytes, decoded.ToLittleEndianByteArray());
+        }
+
+        [Fact]
         public void GuidVariant_NewGuid_IsRfc4122()
         {
             var guid = Guid.NewGuid().Decode();
