@@ -1,0 +1,10 @@
+<Project>
+  <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))" />
+  <PropertyGroup>
+    <SourceLinkCreate>true</SourceLinkCreate>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="SourceLink.Create.CommandLine" Version="2.8.0" PrivateAssets="All" /> 
+  </ItemGroup>
+</Project>

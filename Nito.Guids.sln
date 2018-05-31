@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2018
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nito.Guids", "src\Nito.Guids\Nito.Guids.csproj", "{EBE017A4-9D11-41E2-89BC-C6E603E0FBD5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nito.Guids.Tests", "test\Nito.Guids.Tests\Nito.Guids.Tests.csproj", "{98965A09-1983-4C6B-AABD-1DCEF8186520}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EBE017A4-9D11-41E2-89BC-C6E603E0FBD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBE017A4-9D11-41E2-89BC-C6E603E0FBD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBE017A4-9D11-41E2-89BC-C6E603E0FBD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBE017A4-9D11-41E2-89BC-C6E603E0FBD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98965A09-1983-4C6B-AABD-1DCEF8186520}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98965A09-1983-4C6B-AABD-1DCEF8186520}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98965A09-1983-4C6B-AABD-1DCEF8186520}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98965A09-1983-4C6B-AABD-1DCEF8186520}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A704AF48-775C-4155-8D60-02EAB773D5D6}
+	EndGlobalSection
+EndGlobal
