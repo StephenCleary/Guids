@@ -7,10 +7,13 @@ environment:
 branches:
   only:
     - master
+before_build:
+- choco install codecov
 build_script:
 - dotnet pack -c Release
 test_script:
 - dotnet test -c Release .\test\Nito.Guids.Tests\
+- codecov -f coverage.xml
 artifacts:
   - path: '**\*.nupkg'
     name: NuGet Packages
