@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CA1720 Identifier contains type name
+dotnet_diagnostic.CA1720.severity = none

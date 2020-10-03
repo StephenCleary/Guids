@@ -13,11 +13,19 @@ namespace Nito.Guids
 
         private readonly byte[] _littleEndianGuidBytes;
 
+        /// <summary>
+        /// Decodes the specified <see cref="Guid"/>.
+        /// </summary>
+        /// <param name="guid">The GUID to decode.</param>
         public DecodedGuid(in Guid guid)
         : this(guid.ToByteArray())
         {
         }
 
+        /// <summary>
+        /// Decodes a GUID specified as a little-endian byte array.
+        /// </summary>
+        /// <param name="littleEndianGuidBytes">The byte array to decode as a GUID.</param>
         public DecodedGuid(byte[] littleEndianGuidBytes)
         {
             _littleEndianGuidBytes = littleEndianGuidBytes;

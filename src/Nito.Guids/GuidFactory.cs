@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.ComTypes;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -32,14 +33,22 @@ namespace Nito.Guids
         /// </summary>
         /// <param name="namespace">The GUID that defines the namespace.</param>
         /// <param name="name">The name within that namespace.</param>
-        public static Guid CreateSha1(Guid @namespace, byte[] name) => CreateNamed(@namespace, name, GuidVersion.NameBasedSha1);
+        public static Guid CreateSha1(Guid @namespace, byte[] name)
+        {
+            _ = name ?? throw new ArgumentNullException(nameof(name));
+            return CreateNamed(@namespace, name, GuidVersion.NameBasedSha1);
+        }
 
         /// <summary>
         /// Creates a named, MD5-based (version 3) GUID.
         /// </summary>
         /// <param name="namespace">The GUID that defines the namespace.</param>
         /// <param name="name">The name within that namespace.</param>
-        public static Guid CreateMd5(Guid @namespace, byte[] name) => CreateNamed(@namespace, name, GuidVersion.NameBasedMd5);
+        public static Guid CreateMd5(Guid @namespace, byte[] name)
+        {
+            _ = name ?? throw new ArgumentNullException(nameof(name));
+            return CreateNamed(@namespace, name, GuidVersion.NameBasedMd5);
+        }
 
         /// <summary>
         /// Creates a named, MD5-based (version 3) GUID.
@@ -52,7 +61,11 @@ namespace Nito.Guids
             var namespaceBytes = @namespace.ToBigEndianByteArray();
 
             byte[] hash;
+#pragma warning disable CA5351 // Do Not Use Broken Cryptographic Algorithms
+#pragma warning disable CA5350 // Do Not Use Weak Cryptographic Algorithms
             using (var algorithm = version == GuidVersion.NameBasedMd5 ? MD5.Create() : SHA1.Create() as HashAlgorithm)
+#pragma warning restore CA5350 // Do Not Use Weak Cryptographic Algorithms
+#pragma warning restore CA5351 // Do Not Use Broken Cryptographic Algorithms
             {
                 algorithm.TransformBlock(namespaceBytes, 0, namespaceBytes.Length, null, 0);
                 algorithm.TransformFinalBlock(name, 0, name.Length);

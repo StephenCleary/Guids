@@ -1,4 +1,7 @@
-# Guids [![Build status](https://ci.appveyor.com/api/projects/status/sl2jktwsp96hufew?svg=true)](https://ci.appveyor.com/project/StephenCleary/guids) [![codecov](https://codecov.io/gh/StephenCleary/Guids/branch/master/graph/badge.svg)](https://codecov.io/gh/StephenCleary/Guids) [![NuGet version](https://badge.fury.io/nu/Nito.Guids.svg)](https://www.nuget.org/packages/Nito.Guids)
+![Logo](src/icon.png)
+
+# Guids [![Build status](https://github.com/StephenCleary/Guids/workflows/Build/badge.svg)](https://github.com/StephenCleary/Guids/actions?query=workflow%3ABuild) [![codecov](https://codecov.io/gh/StephenCleary/Guids/branch/master/graph/badge.svg)](https://codecov.io/gh/StephenCleary/Guids) [![NuGet version](https://badge.fury.io/nu/Nito.Guids.svg)](https://www.nuget.org/packages/Nito.Guids) [![API docs](https://img.shields.io/badge/API-dotnetapis-blue.svg)](http://dotnetapis.com/pkg/Nito.Guids)
+
 Helper types for creating and interpreting GUIDs.
 
 ## Creating GUIDs

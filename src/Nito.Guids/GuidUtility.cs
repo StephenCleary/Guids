@@ -26,6 +26,7 @@ namespace Nito.Guids
         /// <param name="guid">The GUID, as a byte array.</param>
         public static byte[] CopyWithEndianSwap(byte[] guid)
         {
+            _ = guid ?? throw new ArgumentNullException(nameof(guid));
             var result = new byte[16];
             result[0] = guid[3];
             result[1] = guid[2];
@@ -45,6 +46,8 @@ namespace Nito.Guids
         /// <param name="guid">The GUID, as a byte array.</param>
         public static void EndianSwap(byte[] guid)
         {
+            _ = guid ?? throw new ArgumentNullException(nameof(guid));
+
             Swap(guid, 0, 3);
             Swap(guid, 1, 2);
 
